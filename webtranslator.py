@@ -265,6 +265,7 @@ def translate():
         ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
 
 
+
 def google(text):
     trans=Translator()
     ja=True
