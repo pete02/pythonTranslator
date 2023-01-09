@@ -27,6 +27,10 @@ model = EasyNMT('opus-mt')
 
 
 def send_msg(file):
+    password= None
+    with open('secret.txt') as f:
+        password = f.readlines()[0]
+
     fromadd="petrik.rasanen@gmail.com"
     if(msgaddr.get()!="none"):
         toadd=msgaddr.get()
@@ -57,7 +61,7 @@ def send_msg(file):
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.ehlo()
     server.starttls()
-    server.login(fromadd, '')
+    server.login(fromadd, password)
     server.sendmail(fromadd, toadd, msg)
     server.quit()
 
