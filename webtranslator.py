@@ -63,7 +63,7 @@ def send_msg(file):
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.ehlo()
     server.starttls()
-    server.login(fromadd, 'mzmweplutprindxm')
+    server.login(fromadd, '')
     server.sendmail(fromadd, toadd, msg)
     server.quit()
 
